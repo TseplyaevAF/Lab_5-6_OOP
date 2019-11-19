@@ -25,7 +25,9 @@ int main()
 	CASH_MACHINE cass1;
 	cass1.set_number(1);
 	//cass1.numValue(p, *ch1);
-	cass1.numValue(p);
+	cass1.numValue(p); // стоимость покупки
+
+	system("pause");
 
 	return 0;
 }

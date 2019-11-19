@@ -35,5 +35,5 @@ string Store::get_director() const {
 
 void Store::delivery(const Product& p) {
 	string date = "12.12.12";
-	std::cout << "Product is <" << p.get_name() << "> was delivered " << date;
+	std::cout << "Product is <" << p.get_name() << "> was delivered " << date << "\n";
 }

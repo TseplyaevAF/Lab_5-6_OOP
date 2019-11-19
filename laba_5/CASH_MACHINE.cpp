@@ -9,10 +9,15 @@ int CASH_MACHINE::get_number() const {
 }
 
 float CASH_MACHINE::numValue(const Product &p) const {
+
 	Check* ch1 = new Check();
 	ch1->set_date("12.12.12");
-	float S = p.get_count() * p.get_price();
-	std::cout << "Дата продажи: " << ch1->get_date();
-	std::cout << "Стоимость покупки: " << S;
+	ch1->set_count(2);
+
+	float S = ch1->get_count() * p.get_price();
+
+	std::cout << "Товар: " << p.get_name() << "\n";
+	std::cout << "Дата продажи: " << ch1->get_date() << "\n";
+	std::cout << "Стоимость покупки: " << S << " руб." << "\n";
 	return S;
 }
