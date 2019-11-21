@@ -1,4 +1,5 @@
 #include "Check.h"
+#include <iostream>
 
 void Check::set_date(std::string date) {
 	_date = date;
@@ -14,4 +15,8 @@ void Check::set_count(unsigned count) {
 
 unsigned Check::get_count() const {
 	return _count;
+}
+
+void Check::addProduct(Product* pr) {
+	_pr.push_back(pr);
 }

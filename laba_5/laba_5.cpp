@@ -12,12 +12,12 @@ int main()
 	m1.set_director("Ivanov P.V.");
 	m1.set_status("Grocery Store"); // 'продуктовый магазин'
 
-	Product p;
-	p.set_name("Wheat bread"); // 'хлеб пшеничный'
-	p.set_count(50);
-	p.set_price(25);
+	Product *p = new Product();
+	p->set_name("Wheat bread"); // 'хлеб пшеничный'
+	p->set_count(50);
+	p->set_price(25);
 
-	m1.delivery(p);
+	m1.delivery(*p);
 
 	//Check *ch1 = new Check();
 	//ch1->set_date("12.12.12");
@@ -25,7 +25,9 @@ int main()
 	CASH_MACHINE cass1;
 	cass1.set_number(1);
 	//cass1.numValue(p, *ch1);
-	cass1.numValue(p); // стоимость покупки
+	cass1.numValue(*p); // стоимость покупки
+
+	delete p;
 
 	system("pause");
 

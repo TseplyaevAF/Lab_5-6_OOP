@@ -11,6 +11,6 @@ public:
 	void set_number(unsigned number);
 	int get_number() const;
 
-	float numValue(const Product &p) const;
+	float numValue( Product &p) const;
 };
 
