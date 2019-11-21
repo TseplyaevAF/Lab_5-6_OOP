@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "Store.h"
 #include "Product.h"
+#include "Toy.h"
 
 using namespace std;
 
@@ -25,6 +26,8 @@ int main()
 	cass1->set_number(1);
 	m1.cashes(cass1);
 	cass1->numValue(p); // стоимость покупки
+
+	Toy t1("Spider-man", 500, 6, 50, "plastic");
 
 	delete cass1;
 

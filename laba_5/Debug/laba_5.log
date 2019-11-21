@@ -1,6 +1,5 @@
-﻿  Store.cpp
+﻿  Toy.cpp
   laba_5.cpp
   Создание кода...
-C:\Users\tsepl\source\repos\laba_5\laba_5\laba_5.cpp(21,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
-  LINK : не найден или не выполнена сборка C:\Users\tsepl\source\repos\laba_5\Debug\laba_5.exe при последней инкрементной компоновке; выполняется полная компоновка
+C:\Users\tsepl\source\repos\laba_5\laba_5\laba_5.cpp(22,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
   laba_5.vcxproj -> C:\Users\tsepl\source\repos\laba_5\Debug\laba_5.exe

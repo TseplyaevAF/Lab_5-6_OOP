@@ -1,0 +1,24 @@
+#pragma once
+#include "Product.h"
+
+// Класс Игрушка
+class Toy : public Product
+{
+	unsigned ageLimit; // ограничение по возрасту
+	float weight; // вес игрушки
+	std::string material; // материал игрушки
+
+public:
+	Toy();
+	~Toy();
+	Toy(std::string _name, float price, unsigned ageLimit, float weight, std::string material);
+
+	void set_ageLimit(unsigned n);
+	void set_weight(float weight1);
+	void set_material(std::string m1);
+
+	unsigned get_ageLimit() const;
+	float get_weight() const;
+	std::string get_material() const;
+};
+

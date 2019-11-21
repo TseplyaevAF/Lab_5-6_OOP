@@ -4,6 +4,7 @@
 // Класс Товар
 class Product
 {
+protected:
 	std::string _name;
 	float _price;
 	unsigned _count;
