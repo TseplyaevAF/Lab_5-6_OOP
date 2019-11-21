@@ -1,6 +1,3 @@
-﻿  CASH_MACHINE.cpp
-  Check.cpp
-  Store.cpp
-  laba_5.cpp
-  Создание кода...
+﻿  laba_5.cpp
+C:\Users\tsepl\source\repos\laba_5\laba_5\laba_5.cpp(21,21): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
   laba_5.vcxproj -> C:\Users\tsepl\source\repos\laba_5\Debug\laba_5.exe

@@ -11,8 +11,8 @@ class Store
 	string _name; // название магазина
 	string _status; // специализация магазина (продуктовый/мебельный и т.д.)
 	string _director; // ФИО директора магазина
-	Product _pr; // товар
-	CASH_MACHINE* c_m; // кассовый аппарат
+	vector <Product> _pr; // товар
+	vector <CASH_MACHINE*> c_m; // кассовый аппарат
 
 public:
 	Store();
@@ -20,6 +20,8 @@ public:
 	void set_name(string name);
 	void set_status(string status);
 	void set_director(string director);
+	void products(const Product &p1); // добавление продуктов в массив
+	void cashes(CASH_MACHINE *c1); // добавление касс в массив
 
 	string get_name() const;
 	string get_status() const;

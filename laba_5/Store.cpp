@@ -37,3 +37,11 @@ void Store::delivery(const Product& p) {
 	string date = "12.12.12";
 	std::cout << "Product is <" << p.get_name() << "> was delivered " << date << "\n";
 }
+
+void Store::products(const Product &p1) {
+	_pr.push_back(p1);
+}
+
+void Store::cashes(CASH_MACHINE *c1) {
+	c_m.push_back(c1);
+}
