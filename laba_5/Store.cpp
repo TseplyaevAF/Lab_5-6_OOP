@@ -83,4 +83,6 @@ bool Store::sale(unsigned count, const std::string name) {
 
 	// если данный товар закончился, то удаляем его из массива
 	if (_pr[n].get_count() == 0) _pr.erase(_pr.begin() + n);
+
+	return 1; // продажа удалась
 }
