@@ -11,7 +11,7 @@ class Toy : public Product
 public:
 	Toy();
 	~Toy();
-	Toy(std::string _name, float price, unsigned ageLimit, float weight, std::string material);
+	Toy(const std::string &_name, float price, unsigned ageLimit, float weight, const std::string &material);
 
 	void set_ageLimit(unsigned n);
 	void set_weight(float weight1);

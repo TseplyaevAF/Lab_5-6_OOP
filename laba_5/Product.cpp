@@ -30,3 +30,7 @@ float Product::get_price() const {
 unsigned Product::get_count() const {
 	return _count;
 }
+
+//float Product::sort_by_price(std::vector <Product>& p) { // сортировка товаров по цене
+//
+//}

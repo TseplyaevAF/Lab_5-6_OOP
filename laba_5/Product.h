@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <iostream>
+#include <vector>
 
 // Класс Товар
 class Product
@@ -20,5 +22,7 @@ public:
 	std::string get_name() const;
 	float get_price() const;
 	unsigned get_count() const;
+
+	//static float sort_by_price(std::vector <Product> &p); // сортировка товаров по цене
 };
 

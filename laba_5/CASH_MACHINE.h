@@ -11,6 +11,6 @@ public:
 	void set_number(unsigned number);
 	int get_number() const;
 
-	float numValue( Product &p) const;
+	Check* numValue( Product &p);
 };
 

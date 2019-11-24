@@ -8,7 +8,7 @@ Toy::~Toy() {
 
 }
 
-Toy::Toy(std::string _name, float price, unsigned ageLimit, float weight, std::string material) {
+Toy::Toy(const std::string &_name, float price, unsigned ageLimit, float weight, const std::string &material) {
 	_price = price;
 	this->_name = _name;
 	this->ageLimit = ageLimit;

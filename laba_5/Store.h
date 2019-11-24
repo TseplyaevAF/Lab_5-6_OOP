@@ -22,11 +22,12 @@ public:
 	void set_director(string director);
 	void products(const Product &p1); // добавление продуктов в массив
 	void cashes(CASH_MACHINE *c1); // добавление касс в массив
+	Product products_return(unsigned i);
 
 	string get_name() const;
 	string get_status() const;
 	string get_director() const;
 
-	void delivery(const Product &p);
+	void sale(unsigned count, const std::string name, Check *ch1);
 };
 
