@@ -50,10 +50,37 @@ Product Store::products_return(unsigned i) {
 	return _pr[i];
 }
 
-void Store::sale(unsigned count, const std::string name, Check *ch1) {
-	while (ch1 != nullptr) {
-		if (count == ch1->get_count()) {
+// Метод продажи товара
+// первый параметр - кол-во желаемого товара
+// второй параметр - название этого товара
+bool Store::sale(unsigned count, const std::string name) {
+	bool f = 0; 
+	unsigned n = 0; // n - номер товара
 
+	// поиск указанного товара
+	for (unsigned i = 0; i < _pr.size(); i++) {
+		if (name == _pr[i].get_name()) {
+			if (count <= _pr[i].get_count()) {
+				n = i;
+				f = 1;
+				break;
+			}
+				
 		}
 	}
+	if (f == 0) return 0; // продажа не удалась
+
+	CASH_MACHINE* cass1 = new CASH_MACHINE();
+	cass1->set_number(1);
+	cashes(cass1);
+
+	Check* check1 = cass1->numValue(_pr[n], count); // стоимость покупки 
+	cout << endl;
+
+	unsigned count1 = _pr[n].get_count(); // возвращаем текущее значение данного товара
+
+	_pr[n].set_count(count1 - count); // уменьшаем кол-во товара на кол-во проданного
+
+	// если данный товар закончился, то удаляем его из массива
+	if (_pr[n].get_count() == 0) _pr.erase(_pr.begin() + n);
 }

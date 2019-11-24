@@ -11,6 +11,7 @@ public:
 	void set_number(unsigned number);
 	int get_number() const;
 
-	Check* numValue( Product &p);
+	Check* numValue( Product &p, unsigned count);
+
 };
 

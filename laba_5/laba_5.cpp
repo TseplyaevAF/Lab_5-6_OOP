@@ -7,6 +7,9 @@ using namespace std;
 
 int main()
 {
+	string prName;
+	unsigned count1 = 0, price1 = 0;
+
 	setlocale(0, "RUS");
 	unsigned n = 3;
 
@@ -15,24 +18,30 @@ int main()
 	m1.set_director("Ivanov P.V.");
 	m1.set_status("Grocery Store"); // 'продуктовый магазин'
 	
-	for (unsigned i = 0; i < n; i++) {
+	for (unsigned i = 0; i < 2; i++) {
 		Product* p = new Product();
-		p->set_name("Wheat bread"); // 'хлеб пшеничный'
-		p->set_count(rand() % 50);
-		p->set_price(rand() % 25);
+		cin >> prName;
+		p->set_name(prName); // 'хлеб пшеничный'
+		cin >> count1;
+		p->set_count(count1);
+		cin >> price1;
+		p->set_price(price1);
 		m1.products(*p);
 	}
 
+	bool flag; 
 
-	for (unsigned i = 0; i < n; i++)
-	{
-		Product p = m1.products_return(i);
-		CASH_MACHINE* cass1 = new CASH_MACHINE();
-		cass1->set_number(i);
-		m1.cashes(cass1);
-		Check* check1 = cass1->numValue(p); // стоимость покупки 
-		cout << endl;
-	}
+	flag = m1.sale(3, "Bread");
+
+	//for (unsigned i = 0; i < n; i++)
+	//{
+	//	Product p = m1.products_return(i);
+	//	CASH_MACHINE* cass1 = new CASH_MACHINE();
+	//	cass1->set_number(i);
+	//	m1.cashes(cass1);
+	//	Check* check1 = cass1->numValue(p); // стоимость покупки 
+	//	cout << endl;
+	//}
 
 	Toy t1("Spider-man", 500, 6, 50, "plastic");
 

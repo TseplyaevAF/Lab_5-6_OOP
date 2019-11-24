@@ -8,11 +8,11 @@ int CASH_MACHINE::get_number() const {
 	return _number;
 }
 
-Check* CASH_MACHINE::numValue( Product &p)  {
+Check* CASH_MACHINE::numValue( Product &p, unsigned count)  {
 
 	Check* ch1 = new Check();
 	ch1->set_date("12.12.12"); // дата продажи
-	ch1->set_count(2); // кол-во продаж
+	ch1->set_count(count); // кол-во продаж
 	ch1->addProduct(&p);
 
 	float S = ch1->get_count() * p.get_price();

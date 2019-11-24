@@ -28,6 +28,6 @@ public:
 	string get_status() const;
 	string get_director() const;
 
-	void sale(unsigned count, const std::string name, Check *ch1);
+	bool sale(unsigned count, const std::string name);
 };
 
