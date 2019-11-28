@@ -19,10 +19,6 @@ Check::Check(std::string name, float price, unsigned count, float cost) {
 	info.cost = cost;
 }
 
-void Check::set_date(std::string date) {
-	info._date = date;
-}
-
 void Check::set_count(unsigned count) {
 	info._count = count;
 }

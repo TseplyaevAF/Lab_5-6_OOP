@@ -22,7 +22,6 @@ public:
 	Check();
 	Check(std::string name, float price, unsigned count, float cost);
 
-	void set_date(std::string date);
 	void set_count(unsigned count);
 
 	std::string get_date() const;

@@ -11,6 +11,7 @@ int CASH_MACHINE::get_number() const {
 Check* CASH_MACHINE::numValue( Product &p, unsigned count)  {
 
 	Check* ch1 = new Check();
+
 	ch1->set_info(p, count);
 
 	std::cout << p.get_name() << "\n";

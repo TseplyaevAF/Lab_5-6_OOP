@@ -16,7 +16,7 @@ int main()
 	Store m1;
 	m1.set_name("The products");
 	m1.set_director("Ivanov P.V.");
-	m1.set_status("Grocery Store"); // 'продуктовый магазин'
+	m1.set_type("Grocery Store"); // 'продуктовый магазин'
 	
 	for (unsigned i = 0; i < 2; i++) {
 		Product* p = new Product();
