@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
 	string prName;
-	unsigned count1 = 0, price1 = 0;
+	unsigned count1 = 0; float price1 = 0;
 
 	setlocale(0, "RUS");
 	unsigned n = 3;
@@ -30,9 +30,9 @@ int main()
 		delete p;
 	}
 
-	Check ch;
 	try {
-		ch = m1.sale(3, "Bread");
+		Check *ch = m1.sale(3, "Bread");
+		delete ch;
 	}
 	catch (Store::ERRORS e) {
 		if (e == Store::NoProduct) 

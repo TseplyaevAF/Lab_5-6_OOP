@@ -1,24 +1,40 @@
 #pragma once
 #include "Product.h"
-#include <string>
 #include <vector>
+#include "DataHeader.h"
 //#include <iostream>
+
+// структура, содержаща€ данные о товаре
+struct Tinfo {
+	std::string _name; // название товара
+	float _price; // цена товара
+	std::string _date; // дата продажи
+	unsigned _count; // кол-во продаж
+	float cost; // стоимость покупки
+};
 
 //  ласс “оварный „ек
 class Check
 {
-	std::string _date; // дата продажи
-	unsigned _count; // кол-во продаж
-	std::vector <Product*> _pr; 
-
+	Tinfo info; // переменна€ типа с данными о товаре
 
 public:
+	Check();
+	Check(std::string name, float price, unsigned count, float cost);
+
 	void set_date(std::string date);
 	void set_count(unsigned count);
 
 	std::string get_date() const;
 	unsigned get_count() const;
+	std::string get_name() const;
+	float get_price() const;
+	float get_cost() const;
+
+	// ћетод заполн€ет пол€ значени€ми, вз€тых из объекта класса Product
+	// count - кол-во 
+	void set_info(Product &p, unsigned count);
 	
-	void addProduct(Product *pr); // добавл€ем товары в чек
+	//void addProduct(Product *pr); // добавл€ем товары в чек
 };
 

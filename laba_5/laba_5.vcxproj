@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="CASH_MACHINE.cpp" />
     <ClCompile Include="Check.cpp" />
+    <ClCompile Include="DataHeader.cpp" />
     <ClCompile Include="laba_5.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="Store.cpp" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClInclude Include="CASH_MACHINE.h" />
     <ClInclude Include="Check.h" />
+    <ClInclude Include="DataHeader.h" />
     <ClInclude Include="Product.h" />
     <ClInclude Include="Store.h" />
     <ClInclude Include="Toy.h" />

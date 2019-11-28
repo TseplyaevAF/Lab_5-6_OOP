@@ -11,14 +11,11 @@ int CASH_MACHINE::get_number() const {
 Check* CASH_MACHINE::numValue( Product &p, unsigned count)  {
 
 	Check* ch1 = new Check();
-	ch1->set_date("12.12.12"); // дата продажи
-	ch1->set_count(count); // кол-во продаж
-	ch1->addProduct(&p);
+	ch1->set_info(p, count);
 
-	float S = ch1->get_count() * p.get_price();
-
-	std::cout << "Товар: " << p.get_name() << "\n";
+	std::cout << p.get_name() << "\n";
 	std::cout << "Дата продажи: " << ch1->get_date() << "\n";
-	std::cout << "Стоимость покупки: " << S << " руб." << "\n";
+	std::cout << "Количество: " << ch1->get_count() << "\n";
+	std::cout << "Стоимость покупки: " << ch1->get_cost() << " руб." << "\n";
 	return ch1;
 }
