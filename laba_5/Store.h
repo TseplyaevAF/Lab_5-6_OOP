@@ -8,6 +8,7 @@ using namespace std;
 // Класс Магазин
 class Store
 {
+
 	string _name; // название магазина
 	string _status; // специализация магазина (продуктовый/мебельный и т.д.)
 	string _director; // ФИО директора магазина
@@ -15,6 +16,12 @@ class Store
 	vector <CASH_MACHINE*> c_m; // кассовый аппарат
 
 public:
+	// Исключения
+	enum ERRORS {
+		NotAvailable, // товара нет в наличии
+		NoProduct // товара нет
+	};
+
 	Store();
 	~Store();
 	void set_name(string name);
@@ -28,6 +35,6 @@ public:
 	string get_status() const;
 	string get_director() const;
 
-	bool sale(unsigned count, const std::string name);
+	Check sale(unsigned count, const std::string name);
 };
 

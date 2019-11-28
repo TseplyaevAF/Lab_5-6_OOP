@@ -53,8 +53,8 @@ Product Store::products_return(unsigned i) {
 // Метод продажи товара
 // первый параметр - кол-во желаемого товара
 // второй параметр - название этого товара
-bool Store::sale(unsigned count, const std::string name) {
-	bool f = 0; 
+// Возвращает объект класса Check
+Check Store::sale(unsigned count, const std::string name) {
 	unsigned n = 0; // n - номер товара
 
 	// поиск указанного товара
@@ -62,13 +62,12 @@ bool Store::sale(unsigned count, const std::string name) {
 		if (name == _pr[i].get_name()) {
 			if (count <= _pr[i].get_count()) {
 				n = i;
-				f = 1;
 				break;
 			}
-				
-		}
+			else throw NotAvailable;
+
+		} else throw NoProduct;
 	}
-	if (f == 0) return 0; // продажа не удалась
 
 	CASH_MACHINE* cass1 = new CASH_MACHINE();
 	cass1->set_number(1);
@@ -84,5 +83,5 @@ bool Store::sale(unsigned count, const std::string name) {
 	// если данный товар закончился, то удаляем его из массива
 	if (_pr[n].get_count() == 0) _pr.erase(_pr.begin() + n);
 
-	return 1; // продажа удалась
+	return *check1;
 }

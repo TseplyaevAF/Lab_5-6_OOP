@@ -27,11 +27,20 @@ int main()
 		cin >> price1;
 		p->set_price(price1);
 		m1.products(*p);
+		delete p;
 	}
 
-	bool flag; 
-
-	flag = m1.sale(3, "Bread");
+	Check ch;
+	try {
+		ch = m1.sale(3, "Bread");
+	}
+	catch (Store::ERRORS e) {
+		if (e == Store::NoProduct) 
+			cout << "Указанного товара нет\n";
+		if (e == Store::NotAvailable) 
+			cout << "Указанного товара нет в наличии\n";
+	}
+	
 
 	//for (unsigned i = 0; i < n; i++)
 	//{
