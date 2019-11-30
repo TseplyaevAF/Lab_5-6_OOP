@@ -8,7 +8,9 @@ Toy::~Toy() {
 
 }
 
-Toy::Toy(const std::string &_name, float price, unsigned ageLimit, float weight, const std::string &material) {
+Toy::Toy(unsigned count, const std::string &_name, float price, unsigned ageLimit, 
+	float weight, const std::string &material) {
+	this->_count = count;
 	_price = price;
 	this->_name = _name;
 	this->ageLimit = ageLimit;
@@ -38,4 +40,10 @@ float Toy::get_weight() const {
 
 std::string Toy::get_material() const {
 	return material;
+}
+
+std::string Toy::to_string(Toy& t) {
+	std::string s;
+	return s = t.data2string() + "\n" + std::to_string(weight) + "\n" + 
+		std::to_string(ageLimit) + "\n" + material + "\n";
 }

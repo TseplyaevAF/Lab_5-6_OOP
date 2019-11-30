@@ -26,7 +26,8 @@ int main()
 		p->set_count(count1);
 		cin >> price1;
 		p->set_price(price1);
-		m1.products(*p);
+		m1.add_product(p->data2string());
+		m1.add_product(*p);
 		delete p;
 	}
 
@@ -40,21 +41,12 @@ int main()
 		if (e == Store::NotAvailable) 
 			cout << "Указанного товара нет в наличии\n";
 	}
-	
 
-	//for (unsigned i = 0; i < n; i++)
-	//{
-	//	Product p = m1.products_return(i);
-	//	CASH_MACHINE* cass1 = new CASH_MACHINE();
-	//	cass1->set_number(i);
-	//	m1.cashes(cass1);
-	//	Check* check1 = cass1->numValue(p); // стоимость покупки 
-	//	cout << endl;
-	//}
+	// Товар игрушка
+	// 10 шт., 500 р, 6+, 50 г, материал пластик
+	Toy t1(10, "Spider-man", 500, 6, 50, "plastic");
 
-	Toy t1("Spider-man", 500, 6, 50, "plastic");
-
-	//delete cass1;
+	m1.add_product(t1.to_string(t1));
 
 	system("pause");
 

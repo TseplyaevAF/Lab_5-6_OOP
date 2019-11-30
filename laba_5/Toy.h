@@ -11,7 +11,8 @@ class Toy : public Product
 public:
 	Toy();
 	~Toy();
-	Toy(const std::string &_name, float price, unsigned ageLimit, float weight, const std::string &material);
+	Toy(unsigned count, const std::string &_name, float price, unsigned ageLimit, 
+		float weight, const std::string &material);
 
 	void set_ageLimit(unsigned n);
 	void set_weight(float weight1);
@@ -20,5 +21,8 @@ public:
 	unsigned get_ageLimit() const;
 	float get_weight() const;
 	std::string get_material() const;
+
+	// преобразование в строку
+	std::string to_string(Toy &t);
 };
 

@@ -34,3 +34,10 @@ unsigned Product::get_count() const {
 //float Product::sort_by_price(std::vector <Product>& p) { // сортировка товаров по цене
 //
 //}
+
+// преобразование в строку
+std::string Product::data2string() {
+	std::string s;
+	return s = std::to_string(_count) + "\n" + std::to_string(_price) + "\n" +
+		_name + "\n";
+}

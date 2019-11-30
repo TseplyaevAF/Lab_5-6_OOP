@@ -38,7 +38,7 @@ string Store::get_director() const {
 //	std::cout << "Product is <" << p.get_name() << "> was delivered " << date << "\n";
 //}
 
-void Store::products(const Product &p1) {
+void Store::add_product(const Product &p1) {
 	_pr.push_back(p1);
 }
 
@@ -46,7 +46,7 @@ void Store::cashes(CASH_MACHINE *c1) {
 	c_m.push_back(c1);
 }
 
-Product Store::products_return(unsigned i) {
+Product Store::get_product(unsigned i) {
 	return _pr[i];
 }
 
@@ -85,7 +85,15 @@ Check* Store::sale(unsigned count, const std::string name) {
 	_pr[n].set_count(count1 - count); // уменьшаем кол-во товара на кол-во проданного
 
 	// если данный товар закончился, то удаляем его из массива
-	if (_pr[n].get_count() == 0) _pr.erase(_pr.begin() + n);
+	if (_pr[n].get_count() == 0) delete_product(n);
 
 	return check1;
+}
+
+void Store::add_product(const string p) {
+	_products.push_back(p);
+}
+
+void Store::delete_product(unsigned i) {
+	_pr.erase(_pr.begin() + i);
 }
