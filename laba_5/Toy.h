@@ -23,6 +23,6 @@ public:
 	std::string get_material() const;
 
 	// преобразование в строку
-	std::string to_string(Toy &t);
+	std::string data2string(Toy &t);
 };
 

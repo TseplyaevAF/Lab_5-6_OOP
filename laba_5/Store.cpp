@@ -6,7 +6,11 @@ Store::Store() {
 }
 
 Store::~Store() {
-
+	// Очищение памяти
+	for (unsigned i = 0; i < _pr.size(); i++) {
+		if (_pr[i] != nullptr)
+			delete _pr[i];
+	}
 }
 
 void Store::set_name(string name) {
@@ -38,7 +42,7 @@ string Store::get_director() const {
 //	std::cout << "Product is <" << p.get_name() << "> was delivered " << date << "\n";
 //}
 
-void Store::add_product(const Product &p1) {
+void Store::add_product(Product *p1) {
 	_pr.push_back(p1);
 }
 
@@ -47,7 +51,7 @@ void Store::cashes(CASH_MACHINE *c1) {
 }
 
 Product Store::get_product(unsigned i) {
-	return _pr[i];
+	return *_pr[i];
 }
 
 // Метод продажи товара
@@ -60,9 +64,9 @@ Check* Store::sale(unsigned count, const std::string name) {
 
 	// поиск указанного товара
 	for (unsigned i = 0; i < _pr.size(); i++) {
-		if (name == _pr[i].get_name()) {
+		if (name == _pr[i]->get_name()) {
 			f = 1;
-			if (count <= _pr[i].get_count()) {
+			if (count <= _pr[i]->get_count()) {
 				n = i;
 				break;
 			}
@@ -76,16 +80,16 @@ Check* Store::sale(unsigned count, const std::string name) {
 	cass1->set_number(1);
 	cashes(cass1);
 
-	Check* check1 = cass1->numValue(_pr[n], count); // стоимость покупки 
+	Check* check1 = cass1->numValue(*_pr[n], count); // стоимость покупки 
 	cout << endl;
 	delete cass1;
 
-	unsigned count1 = _pr[n].get_count(); // возвращаем текущее значение данного товара
+	unsigned count1 = _pr[n]->get_count(); // возвращаем текущее значение данного товара
 
-	_pr[n].set_count(count1 - count); // уменьшаем кол-во товара на кол-во проданного
+	_pr[n]->set_count(count1 - count); // уменьшаем кол-во товара на кол-во проданного
 
 	// если данный товар закончился, то удаляем его из массива
-	if (_pr[n].get_count() == 0) delete_product(n);
+	if (_pr[n]->get_count() == 0) delete_product(n);
 
 	return check1;
 }

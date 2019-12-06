@@ -25,7 +25,7 @@ public:
 	unsigned get_count() const;
 
 	// преобразование в строку
-	std::string data2string();
+	virtual std::string data2string();
 
 	//static float sort_by_price(std::vector <Product> &p); // сортировка товаров по цене
 };

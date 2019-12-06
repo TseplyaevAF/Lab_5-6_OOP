@@ -42,8 +42,8 @@ std::string Toy::get_material() const {
 	return material;
 }
 
-std::string Toy::to_string(Toy& t) {
+std::string Toy::data2string(Toy& t) {
 	std::string s;
-	return s = t.data2string() + "\n" + std::to_string(weight) + "\n" + 
+	return s = t.Product::data2string() + "\n" + std::to_string(weight) + "\n" + 
 		std::to_string(ageLimit) + "\n" + material + "\n";
 }

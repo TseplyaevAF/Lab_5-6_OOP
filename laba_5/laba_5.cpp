@@ -27,8 +27,8 @@ int main()
 		cin >> price1;
 		p->set_price(price1);
 		m1.add_product(p->data2string());
-		m1.add_product(*p);
-		delete p;
+		m1.add_product(p);
+		//delete p;
 	}
 
 	try {
@@ -44,9 +44,12 @@ int main()
 
 	// Товар игрушка
 	// 10 шт., 500 р, 6+, 50 г, материал пластик
-	Toy t1(10, "Spider-man", 500, 6, 50, "plastic");
+	Toy *t1 = new Toy(10, "Spider-man", 500, 6, 50, "plastic");
 
-	m1.add_product(t1.to_string(t1));
+	m1.add_product(t1);
+
+	Check* ch = m1.sale(1, "Spider-man");
+	delete ch;
 
 	system("pause");
 

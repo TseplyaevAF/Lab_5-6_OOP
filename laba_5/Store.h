@@ -12,7 +12,7 @@ class Store
 	string _name; // название магазина
 	string _type; // тип магазина (продуктовый/мебельный и т.д.)
 	string _director; // ФИО директора магазина
-	vector <Product> _pr; // товары
+	vector <Product*> _pr; // товары
 	vector <CASH_MACHINE*> c_m; // кассовый аппарат
 	vector <string> _products;
 
@@ -31,7 +31,7 @@ public:
 	void set_director(string director);
 
 	// добавление товара в массив
-	void add_product(const Product &p1);
+	void add_product(Product *p1);
 	// добавление товара в массив в виде строки
 	void add_product(const string p);
 	// добавление кассы в массив
